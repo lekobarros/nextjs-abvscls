@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from 'styled-components';
-import StyledContainer from 'src/styled/container'
 
 const container = css`
   overflow-x: hidden;
@@ -29,6 +28,11 @@ const containerGrid = css`
   padding-left: 1rem;
   padding-right: 1rem;
   height: 520px;
+
+  @media (max-width: 640px) {
+    display: flex;
+    align-items: center;
+  }
 
   @media (min-width: 768px) {
     display: grid;

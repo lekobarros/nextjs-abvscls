@@ -2,11 +2,12 @@ import StyledContainer from 'src/styled/container'
 import Style from './../styled';
 
 // Images
-import HeroSm from 'src/imgs/hero_sm.jpg';
+import HeroWebpSm from 'src/imgs/hero_sm.webp';
+import HeroWebpLg from 'src/imgs/hero_abvscls.webp';
 import Hero from 'src/imgs/hero_abvscls.jpg';
 
 // Components
-import HeroSpinner from './../HeroSpinner';
+// import HeroSpinner from './../HeroSpinner';
 
 const HeroFeatured = (): JSX.Element => {
   return <>
@@ -20,13 +21,13 @@ const HeroFeatured = (): JSX.Element => {
 
       <div css={Style.containerHeroFigure}>
         <picture>
-          <source srcSet={HeroSm.src} media="(max-width: 768px)" />
-          <source srcSet={Hero.src} />
-          <img src={Hero.src} alt="Alex Vasconcelos picture's" />
+          <source srcSet={HeroWebpSm.src} media="(max-width: 768px)" />
+          <source srcSet={HeroWebpLg.src} />
+          <img src={Hero.src} alt="Alex Vasconcelos picture's" width="1140" height="671" />
         </picture>
       </div>
 
-      <HeroSpinner />
+      {/* <HeroSpinner /> */}
     </div>
   </>
 }

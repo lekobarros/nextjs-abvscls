@@ -15,7 +15,7 @@ interface mousePosIf {
   y: number;
 }
 
-const Counter: React.FC = () => {
+const Page : React.FC = () => {
   const radialGradient = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState<mousePosIf>({ x: 0, y: 0 });
 
@@ -53,4 +53,4 @@ const Counter: React.FC = () => {
   )
 }
 
-export default Counter;
+export default Page;
