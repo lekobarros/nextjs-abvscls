@@ -39,21 +39,16 @@ const containerGrid = css`
     align-items: center;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-template-rows: repeat(6, minmax(0, 1fr));
-    padding-left: 0;
-    padding-right: 0;
     gap: 0.875rem;
   }
 
   @media (min-width: 1024px) {
-    padding-left: 4rem;
-  }
-
-  @media (min-width: 1320px) {
     padding-left: 6rem;
+    padding-right: 0;
   }
 
-  @media (min-width: 1536px) {
-    padding-left: 2rem;
+  @media (min-width: 1920px) {
+    padding-left: 0;
   }
 `
 const containerHeroText = css`

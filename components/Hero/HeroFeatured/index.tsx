@@ -21,7 +21,7 @@ const HeroFeatured = (): JSX.Element => {
 
       <div css={Style.containerHeroFigure}>
         <picture>
-          <source srcSet={HeroWebpSm.src} media="(max-width: 768px)" />
+          <source srcSet={HeroWebpSm.src} media="(max-width: 1024px)" />
           <source srcSet={HeroWebpLg.src} />
           <img src={Hero.src} alt="Alex Vasconcelos picture's" width="1140" height="671" />
         </picture>
