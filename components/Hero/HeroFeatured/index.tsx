@@ -15,8 +15,8 @@ const HeroFeatured = (): JSX.Element => {
       <div css={Style.containerHeroText}>
         <p className='text-xl md:text-2xl lg:text-3xl'>Hi! I&apos;m Vasconcelos!</p>
         <p className='text-3xl md:text-5xl xl:text-8xl'>A Front-end Developer <span className="block">from Brazil.</span></p>
-        <p className='w-full max-w-xs md:max-w-3xl text-sm md:text-xl'>I help build things for the Web — impassioned in developing Single Page Applications with Vue or React.
-          I&apos;m a Front-end Developer at AtarB2B on the project ERP BaaS.</p>
+        <p className='w-full max-w-xs md:max-w-3xl text-sm md:text-xl'>I, as a developer, am passionate about web development, particularly with animations and user experience. I&apos;m an expert in Vue.js and React.js for Single Page Applications.</p>
+        <p className='w-full max-w-xs md:max-w-3xl text-sm md:text-xl'>I&apos;m a Front-end Developer at AtarB2B working with Vue.js for ERP development with BaaS in a banking system team.</p>
       </div>
 
       <div css={Style.containerHeroFigure}>

@@ -93,45 +93,6 @@ const containerHeroFigure = css`
   }
 `;
 
-const gradints = css`
-  visibility: hidden;
-
-  @media (min-width: 768px) {
-    position: absolute;
-    z-index: 10;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    // height: 50vh;
-    pointer-events: none;
-    visibility: visible;
-    overflow: hidden;
-  }
-
-  & div {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 515px;
-    height: 515px;
-    background: linear-gradient(180deg, #F8E098 0%, #F2C94C 100%);
-    filter: blur(60px);
-    border-radius: 50%;
-
-    &:first-child {
-      left: 0;
-      bottom: 0;
-    }
-
-    &:last-child { 
-      background: linear-gradient(180deg, rgba(101,83,67, 0.5) 0%, rgba(155,185,168, 0.75) 100%);
-      bottom: calc((((515px * 0.5) / 2)  * -1));
-      left: calc((((515px * 0.5) / 2 ) * -1));
-    }
-  }
-`
-
 const spinnerFramer = keyframes`
   0% {
     transform:rotate(0); 
@@ -158,7 +119,6 @@ export const styles = {
   containerGrid,
   containerHeroText,
   containerHeroFigure,
-  gradints,
   spinner
 }
 
