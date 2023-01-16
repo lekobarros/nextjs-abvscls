@@ -7,6 +7,8 @@ import localFont from '@next/font/local'
 
 const myFont = localFont({ src: './../src/fonts/PPNeueMontreal-Medium.otf' })
 
+import Header from 'components/Header'
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -16,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
+      <Header />
       <Component {...pageProps} />
 
 

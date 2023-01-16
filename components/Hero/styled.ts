@@ -15,6 +15,10 @@ const container = css`
   background-size: 164px 16px, 164px 164px;
   background-position: -2px -2px;
   overflow: hidden;
+
+  @supports (height: 100svh) {
+    height: 100svh;
+  }
 `
 
 const spinnerFramer = keyframes`

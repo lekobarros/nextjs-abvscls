@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Head>
         <title>Alex Vasconcelos — Front-end Developer</title>
-        <meta name="description" content="Alex Vasconcelos personal portfolio's. A Front-end Developer Vue.js based in Belo Horizonte." />
+        <meta name="description" content="My name is Alex Vasconcelos and I am an expert web developer from Brazil specializing in Vue.js and React.js for creating dynamic and user-friendly Single Page Applications (SPA) with HTML5, emphasizing on smooth animation, efficient navigation, and responsive design." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
