@@ -1,5 +1,5 @@
 import StyledContainer from 'src/styled/container'
-import Style from './../styled';
+import Style from './style';
 
 // Images
 import HeroWebpSm from 'src/imgs/hero_sm.webp';

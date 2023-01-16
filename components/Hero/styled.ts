@@ -1,8 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
 const container = css`
-  overflow-x: hidden;
-
   display: flex;
   align-items: center;
   position: relative;
@@ -16,82 +14,8 @@ const container = css`
     linear-gradient(90deg, rgba(226, 226, 226, 1) 1px, transparent 2px);
   background-size: 164px 16px, 164px 164px;
   background-position: -2px -2px;
-
-  @media (min-width: 768px) {
-    // padding: 4rem 0 4rem 4rem;
-  }
+  overflow: hidden;
 `
-
-// Hero
-const containerGrid = css`
-  position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  height: 520px;
-
-  @media (max-width: 640px) {
-    display: flex;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: repeat(6, minmax(0, 1fr));
-    gap: 0.875rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding-left: 6rem;
-    padding-right: 0;
-  }
-
-  @media (min-width: 1920px) {
-    padding-left: 0;
-  }
-`
-const containerHeroText = css`
-  position: relative;
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 0.875rem;
-
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    grid-column: span 6 / span 6;
-    grid-row: 2 / 6;
-    gap: 1.5rem;
-  }
-`;
-
-const containerHeroFigure = css`
-  position: absolute;
-  z-index: 20;
-  transform: translateX(45%);
-
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    grid-column: 3 / 9;
-    grid-row: 2 / 6;
-    overflow: hidden;
-  }
-
-  @media (min-width: 1024px) {
-    grid-column: 4 / 9;
-    transform: translateX(0);
-  }
-
-  @media (min-width: 1364px) {
-    overflow: unset;
-    transform: translateX(05%);
-  }
-`;
 
 const spinnerFramer = keyframes`
   0% {
@@ -116,9 +40,6 @@ const spinner = css`
 
 export const styles = {
   container,
-  containerGrid,
-  containerHeroText,
-  containerHeroFigure,
   spinner
 }
 

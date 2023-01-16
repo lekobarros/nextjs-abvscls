@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
 
 const wrapper = css`
-  visibility: hidden;
+  display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
+    display: inline;
     position: absolute;
     z-index: 10;
     bottom: 0;
@@ -14,7 +15,7 @@ const wrapper = css`
     // height: 50vh;
     pointer-events: none;
     visibility: visible;
-    overflow: hidden;
+    // overflow: hidden;
   }
 `;
 
