@@ -1,26 +1,58 @@
-import { useEffect, useRef } from 'react';
-import Style from './styled';
+import { useEffect, useRef, useState } from 'react'
+import Style from './styled'
 
 import { lerp } from 'src/util'
-import gsap from 'gsap';
+import gsap from 'gsap'
+
+// Context
+import { useAnimationContext } from 'src/context'
 
 // Interface
 type PosMouse = {
-  clientX: number;
-  clientY: number;
-};
+  clientX: number
+  clientY: number
+}
 
 type ComponentProps = {
-  posTrackMouse: PosMouse;
-};
+  posTrackMouse: PosMouse
+}
 
 export const HeroGradient = ({ posTrackMouse }: ComponentProps): JSX.Element => {
-  const el = useRef<HTMLDivElement>(null);
+  const { animationCompleted } = useAnimationContext()
+
+  const [isAnimating, setIsAnimating] = useState<boolean>(true)
+  const el = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const children: NodeListOf<HTMLElement> = el.current?.querySelectorAll('div') as NodeListOf<HTMLElement>
-    const boundingRectParent = el.current?.getBoundingClientRect() 
-    const { innerWidth, innerHeight } = window;
+    const queryEl = gsap.utils.selector(el.current)
+    const children: HTMLElement[] = queryEl('div') as HTMLDivElement[]
+    gsap.set(children, { opacity: 0 })
+
+    // When AnimationCompleted
+    if (animationCompleted) {
+      gsap.to(children, {
+        startAt: {
+          opacity: 0,
+          scale: 0.75,
+        },
+        opacity: 1,
+        scale: 1,
+        ease: "circ.inOut",
+        duration: 0.8,
+        onStart: () => setIsAnimating(true),
+        onComplete: () => setIsAnimating(false)
+      })
+    }
+  }, [animationCompleted])
+
+  useEffect(() => {
+    if (isAnimating) return
+
+    const queryEl = gsap.utils.selector(el.current)
+    const children: HTMLElement[] = queryEl('div') as HTMLDivElement[]
+
+    const boundingRectParent = el.current?.getBoundingClientRect()
+    const { innerWidth, innerHeight } = window
     const { clientX, clientY }: { clientX: number; clientY: number } = posTrackMouse
 
     children.forEach(child => {
@@ -28,8 +60,8 @@ export const HeroGradient = ({ posTrackMouse }: ComponentProps): JSX.Element => 
       let y = clientY
 
       if (boundingRectParent) {
-        const perX = (100 * clientX) / innerWidth || 0;
-        const perY = (100 * clientY) / innerHeight || 0;
+        const perX = (100 * clientX) / innerWidth || 0
+        const perY = (100 * clientY) / innerHeight || 0
 
         x = lerp(boundingRectParent?.left, perX, 1.25)
         y = lerp(boundingRectParent?.top, perY, 1.25)
@@ -41,7 +73,7 @@ export const HeroGradient = ({ posTrackMouse }: ComponentProps): JSX.Element => 
       // Animate Again
       gsap.to(child, { x, y, ease: "power3", duration: 0.6 })
     })
-  }, [posTrackMouse]);
+  }, [posTrackMouse, isAnimating])
 
   return (
     <div css={Style.wrapper} ref={el}>
@@ -49,8 +81,8 @@ export const HeroGradient = ({ posTrackMouse }: ComponentProps): JSX.Element => 
       <div css={[Style.radialCircle, Style.radialCircleSecond]} />
     </div>
   )
-};
+}
 
-HeroGradient.displayName = 'HeroGradient';
+HeroGradient.displayName = 'HeroGradient'
 
-export default HeroGradient;
+export default HeroGradient
