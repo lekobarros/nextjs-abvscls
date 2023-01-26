@@ -42,6 +42,10 @@ const containerHeroText = css`
     grid-row: 4 / 6;
     gap: 1.5rem;
   }
+
+  span.word {
+    display: inline-block;
+  }
 `;
 
 const containerHeroFigure = css`
