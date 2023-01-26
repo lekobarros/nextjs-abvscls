@@ -7,9 +7,12 @@ import localFont from '@next/font/local'
 
 const myFont = localFont({ src: './../src/fonts/PPNeueMontreal-Medium.otf' })
 
-import Header from 'components/Header'
+import { AnimationProvider } from 'src/context/AnimationContext'
 
-export default function App({ Component, pageProps }: AppProps) {
+import Header from 'components/Header'
+import Loader from 'components/Loader'
+
+export const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <style jsx global>{`
@@ -19,7 +22,11 @@ export default function App({ Component, pageProps }: AppProps) {
       `}</style>
 
       <Header />
-      <Component {...pageProps} />
+
+      <AnimationProvider>
+        <Loader />
+        <Component {...pageProps} />
+      </AnimationProvider>
 
 
       {/* Google GTAG */}
@@ -37,3 +44,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+export default App
