@@ -21,7 +21,7 @@ export const App = ({ Component, pageProps }: AppProps) => {
         }
       `}</style>
 
-      <Header />
+      {/* <Header /> */}
 
       <AnimationProvider>
         <Loader />
