@@ -84,6 +84,9 @@ export const Loader = () => {
     // Play on TL
     tl.play()
 
+    // Scale animation in development
+    if (process.env.NODE_ENV !== "production") tl.timeScale(10);
+
     return () => {
       tl.kill();
     }
