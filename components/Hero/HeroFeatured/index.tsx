@@ -70,7 +70,7 @@ const HeroFeatured = (): JSX.Element => {
         <p className='text-xl md:text-2xl lg:text-3xl' ref={elSurname}>Hi! I&apos;m Vasconcelos!</p>
         <p className='text-3xl md:text-5xl xl:text-8xl' ref={elText}>A Front-end Developer <span className="block">from Brazil.</span></p>
         <div className='w-full max-w-xs md:max-w-3xl text-sm md:text-xl' ref={elDescription}>
-          <p className='mb-4'>I, as a developer, am passionate about web development, particularly with animations and user experience. I&apos;m an expert in Vue.js and React.js for Single Page Applications.</p>
+          <p className='mb-4'>I, as a developer, am passionate about web development, particularly with animations and user experience. I&apos;m an expert in Vue.js and React for Single Page Applications.</p>
           <p >I&apos;m a Front-end Developer at AtarB2B working with Vue.js for ERP development with BaaS in a banking system team.</p>
         </div>
       </div>
