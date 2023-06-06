@@ -26,7 +26,10 @@ export const HeroGradient = ({ posTrackMouse }: ComponentProps): JSX.Element => 
   useEffect(() => {
     const queryEl = gsap.utils.selector(el.current)
     const children: HTMLElement[] = queryEl('div') as HTMLDivElement[]
+
     gsap.set(children, { opacity: 0 })
+    gsap.set(children[0], { left: 256, top: 256 })
+    gsap.set(children[1], { opacity: 0 })
 
     // When AnimationCompleted
     if (animationCompleted) {
@@ -77,8 +80,8 @@ export const HeroGradient = ({ posTrackMouse }: ComponentProps): JSX.Element => 
 
   return (
     <div css={Style.wrapper} ref={el}>
-      <div css={[Style.radialCircle, Style.radialCircleFirst]} />
-      <div css={[Style.radialCircle, Style.radialCircleSecond]} />
+      <div css={Style.radialCircle} />
+      <div css={Style.radialCircle} />
     </div>
   )
 }

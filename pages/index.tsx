@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Hero from 'components/Hero'
+import Projects from 'components/Projects'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
 
       <main className="relative w-full min-h-screen">
         <Hero />
+        <Projects />
       </main>
     </>
   )

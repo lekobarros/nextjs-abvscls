@@ -16,6 +16,21 @@ const container = css`
   background-position: -2px -2px;
   overflow: hidden;
 
+  /* &:after {
+    content: '';
+    position: absolute;
+    z-index: 20;
+    height: 50vh;
+    right: 0;
+    bottom: 0;
+    left: 0%;
+    background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.75) 50%, #ffffff 100%);
+
+    @supports (height: 100svh) {
+      height: 50svh;
+    }
+  } */
+
   @supports (height: 100svh) {
     height: 100svh;
   }
